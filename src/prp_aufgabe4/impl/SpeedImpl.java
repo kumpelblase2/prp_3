@@ -28,37 +28,37 @@ public class SpeedImpl implements Speed
 	@Override
 	public Length mul(TimeDiff inTime)
 	{
-		return Lengths.lengthInM(this.toMPerSeconds() * inTime.toS());
+		return Values.lengthInM(this.toMPerSeconds() * inTime.toS());
 	}
 
 	@Override
 	public Acceleration div(TimeDiff inTime)
 	{
-		return Accelerations.accelerationWithMetersPerSSquared(this.toMPerSeconds() / inTime.toS());
+		return Values.accelerationWithMetersPerSSquared(this.toMPerSeconds() / inTime.toS());
 	}
 
 	@Override
 	public Speed add(Speed inToAdd)
 	{
-		return Speeds.speedWithMetersPerS(this.toMPerSeconds() + inToAdd.toMPerSeconds());
+		return  Values.speedWithMetersPerS(this.toMPerSeconds() + inToAdd.toMPerSeconds());
 	}
 
 	@Override
 	public Speed sub(Speed inToSub)
 	{
-		return Speeds.speedWithMetersPerS(this.toMPerSeconds() - inToSub.toMPerSeconds());
+		return Values.speedWithMetersPerS(this.toMPerSeconds() - inToSub.toMPerSeconds());
 	}
 
 	@Override
 	public Speed mul(double inToMultiply)
 	{
-		return Speeds.speedWithMetersPerS(this.toMPerSeconds() * inToMultiply);
+		return Values.speedWithMetersPerS(this.toMPerSeconds() * inToMultiply);
 	}
 
 	@Override
 	public Speed div(double inToDivide)
 	{
-		return Speeds.speedWithMetersPerS(this.toMPerSeconds() / inToDivide);
+		return Values.speedWithMetersPerS(this.toMPerSeconds() / inToDivide);
 	}
 
 	static SpeedImpl valueOf(Length inDistance, TimeDiff inTime)

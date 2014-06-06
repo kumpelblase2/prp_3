@@ -32,32 +32,32 @@ public class PowerImpl implements Power {
 
     @Override
     public Work mul(TimeDiff inLength) {
-	return Works.workInJoule(this.toWatt() * inLength.toS());
+	return Values.workInJoule(this.toWatt() * inLength.toS());
     }
 
     @Override
     public Power add(Power inToAdd) {
-	return Powers.powerInWatt(this.toWatt() + inToAdd.toWatt());
+	return Values.powerInWatt(this.toWatt() + inToAdd.toWatt());
     }
 
     @Override
     public Power sub(Power inToSub) {
-	return Powers.powerInWatt(this.toWatt() - inToSub.toWatt());
+	return Values.powerInWatt(this.toWatt() - inToSub.toWatt());
     }
 
     @Override
     public Power mul(double inToMultiply) {
-	return Powers.powerInWatt(this.toWatt() * inToMultiply);
+	return Values.powerInWatt(this.toWatt() * inToMultiply);
     }
 
     @Override
     public Power div(double inToDivide) {
-	return Powers.powerInWatt(this.toWatt() / inToDivide);
+	return Values.powerInWatt(this.toWatt() / inToDivide);
     }
     
     @Override
     public Force div(Speed inSpeed) {
-	return Forces.forceInN(this.toWatt() / inSpeed.toMPerSeconds());
+	return Values.forceInN(this.toWatt() / inSpeed.toMPerSeconds());
     }
 	
     

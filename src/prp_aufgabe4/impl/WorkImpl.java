@@ -30,27 +30,27 @@ public class WorkImpl implements Work {
 
     @Override
     public Power div(TimeDiff inTime) {
-	return Powers.powerInWatt(this.toJ() / inTime.toS());
+	return Values.powerInWatt(this.toJ() / inTime.toS());
     }
 
     @Override
     public Work add(Work inToAdd) {
-	return Works.workInJoule(this.toJ() + inToAdd.toJ());
+	return Values.workInJoule(this.toJ() + inToAdd.toJ());
     }
 
     @Override
     public Work sub(Work inToSub) {
-	return Works.workInJoule(this.toJ() - inToSub.toJ());
+	return Values.workInJoule(this.toJ() - inToSub.toJ());
     }
 
     @Override
     public Work mul(double inToMultiply) {
-	return Works.workInJoule(this.toJ() * inToMultiply);
+	return Values.workInJoule(this.toJ() * inToMultiply);
     }
 
     @Override
     public Work div(double inToDivide) {
-	return Works.workInJoule(this.toJ() * inToDivide);
+	return Values.workInJoule(this.toJ() * inToDivide);
     }
     
     public static WorkImpl valueOf(double inValue)

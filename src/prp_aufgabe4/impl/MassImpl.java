@@ -23,22 +23,22 @@ public class MassImpl implements Mass
     
     @Override
     public Mass add(Mass inToAdd) {
-	return Masses.massInKG(this.toKG() + inToAdd.toKG());
+	return Values.massInKG(this.toKG() + inToAdd.toKG());
     }
 
     @Override
     public Mass sub(Mass inToSub) {
-	return Masses.massInKG(this.toKG() - inToSub.toKG());
+	return Values.massInKG(this.toKG() - inToSub.toKG());
     }
 
     @Override
     public Mass mul(double inToMultiply) {
-	return Masses.massInKG(this.toKG() * inToMultiply);
+	return Values.massInKG(this.toKG() * inToMultiply);
     }
 
     @Override
     public Mass div(double inToDivide) {
-	return Masses.massInKG(this.toKG() / inToDivide);
+	return Values.massInKG(this.toKG() / inToDivide);
     }
 
     @Override

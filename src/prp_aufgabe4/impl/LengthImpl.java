@@ -36,31 +36,31 @@ class LengthImpl implements Length
 	@Override
 	public Speed div(TimeDiff inTime)
 	{
-		return Speeds.speedWithDistanceAndTime(this, inTime);
+		return Values.speedWithDistanceAndTime(this, inTime);
 	}
 
 	@Override
 	public Length add(Length inToAdd)
 	{
-		return Lengths.lengthInM(this.m_meter + inToAdd.toM());
+		return Values.lengthInM(this.m_meter + inToAdd.toM());
 	}
 
 	@Override
 	public Length sub(Length inToSub)
 	{
-		return Lengths.lengthInM(this.m_meter - inToSub.toM());
+		return  Values.lengthInM(this.m_meter - inToSub.toM());
 	}
 
 	@Override
 	public Length mul(double inToMultiply)
 	{
-		return Lengths.lengthInM(this.m_meter * inToMultiply);
+		return Values.lengthInM(this.m_meter * inToMultiply);
 	}
 
 	@Override
 	public Length div(double inToDivide)
 	{
-		return Lengths.lengthInM(this.m_meter / inToDivide);
+		return Values.lengthInM(this.m_meter / inToDivide);
 	}
 
 	public static LengthImpl valueOf(double inMeter)
