@@ -23,25 +23,25 @@ class TimeDiffImpl implements TimeDiff
 	@Override
 	public TimeDiff add(TimeDiff inToAdd)
 	{
-		return TimeDiffs.timeInSeconds(this.toS() + inToAdd.toS());
+		return Values.timeInSeconds(this.toS() + inToAdd.toS());
 	}
 
 	@Override
 	public TimeDiff sub(TimeDiff inToSub)
 	{
-		return TimeDiffs.timeInSeconds(this.toS() - inToSub.toS());
+		return Values.timeInSeconds(this.toS() - inToSub.toS());
 	}
 
 	@Override
 	public TimeDiff mul(double inToMultiply)
 	{
-		return TimeDiffs.timeInSeconds(this.toS() * inToMultiply);
+		return Values.timeInSeconds(this.toS() * inToMultiply);
 	}
 
 	@Override
 	public TimeDiff div(double inToDivide)
 	{
-		return TimeDiffs.timeInSeconds(this.toS() / inToDivide);
+		return Values.timeInSeconds(this.toS() / inToDivide);
 	}
 
 	static TimeDiffImpl valueOf(double inSeconds)

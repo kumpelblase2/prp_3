@@ -32,32 +32,32 @@ public class ForceImpl implements Force {
 
     @Override
     public Acceleration div(Mass inMass) {
-	return Accelerations.accelerationWithMetersPerSSquared(this.toN() / inMass.toKG());
+	return Values.accelerationWithMetersPerSSquared(this.toN() / inMass.toKG());
     }
 
     @Override
     public Work mul(Length inLength) {
-	return Works.workInJoule(this.toN() * inLength.toM());
+	return Values.workInJoule(this.toN() * inLength.toM());
     }
 
     @Override
     public Force add(Force inToAdd) {
-	return Forces.forceInN(this.toN() + inToAdd.toN());
+	return Values.forceInN(this.toN() + inToAdd.toN());
     }
 
     @Override
     public Force sub(Force inToSub) {
-	return Forces.forceInN(this.toN() - inToSub.toN());
+	return Values.forceInN(this.toN() - inToSub.toN());
     }
 
     @Override
     public Force mul(double inToMultiply) {
-	return Forces.forceInN(this.toN() * inToMultiply);
+	return Values.forceInN(this.toN() * inToMultiply);
     }
 
     @Override
     public Force div(double inToDivide) {
-	return Forces.forceInN(this.toN() / inToDivide);
+	return Values.forceInN(this.toN() / inToDivide);
     }
     
     public static ForceImpl valueOf(double inValue)

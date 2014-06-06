@@ -25,36 +25,36 @@ public class AccelerationImpl implements Acceleration
 	@Override
 	public Speed mul(TimeDiff inTime)
 	{
-		return Speeds.speedWithMetersPerS(this.toMeterPerSSquared() * inTime.toS());
+		return Values.speedWithMetersPerS(this.toMeterPerSSquared() * inTime.toS());
 	}
 
 	@Override
 	public Acceleration add(Acceleration inToAdd)
 	{
-		return Accelerations.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() + inToAdd.toMeterPerSSquared());
+		return Values.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() + inToAdd.toMeterPerSSquared());
 	}
 
 	@Override
 	public Acceleration sub(Acceleration inToSub)
 	{
-		return Accelerations.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() - inToSub.toMeterPerSSquared());
+		return Values.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() - inToSub.toMeterPerSSquared());
 	}
 
 	@Override
 	public Acceleration mul(double inToMultiply)
 	{
-		return Accelerations.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() * inToMultiply);
+		return Values.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() * inToMultiply);
 	}
 
 	@Override
 	public Acceleration div(double inToDivide)
 	{
-		return Accelerations.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() / inToDivide);
+		return Values.accelerationWithMetersPerSSquared(this.toMeterPerSSquared() / inToDivide);
 	}
 	
 	@Override
 	public Force mul(Mass inMass) {
-	    return Forces.forceInN(this.toMeterPerSSquared() * inMass.toKG());
+	    return Values.forceInN(this.toMeterPerSSquared() * inMass.toKG());
 	}
 
 	static AccelerationImpl valueOf(Speed inSpeed, TimeDiff inTimeDiff)
