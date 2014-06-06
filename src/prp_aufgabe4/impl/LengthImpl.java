@@ -63,7 +63,7 @@ class LengthImpl implements Length
 		return Values.lengthInM(this.m_meter / inToDivide);
 	}
 
-	public static LengthImpl valueOf(double inMeter)
+	static LengthImpl valueOf(double inMeter)
 	{
 		return new LengthImpl(inMeter);
 	}

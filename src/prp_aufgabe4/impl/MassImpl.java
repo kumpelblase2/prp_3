@@ -46,7 +46,7 @@ public class MassImpl implements Mass
 	return this.m_value;
     }
     
-    protected static MassImpl valueOf(double inValue)
+    static MassImpl valueOf(double inValue)
     {
 	return new MassImpl(inValue);
     }

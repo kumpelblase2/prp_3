@@ -53,7 +53,7 @@ public class WorkImpl implements Work {
 	return Values.workInJoule(this.toJ() * inToDivide);
     }
     
-    public static WorkImpl valueOf(double inValue)
+    static WorkImpl valueOf(double inValue)
     {
 	return new WorkImpl(inValue);
     }

@@ -60,7 +60,7 @@ public class ForceImpl implements Force {
 	return Values.forceInN(this.toN() / inToDivide);
     }
     
-    public static ForceImpl valueOf(double inValue)
+    static ForceImpl valueOf(double inValue)
     {
 	return new ForceImpl(inValue);
     }
