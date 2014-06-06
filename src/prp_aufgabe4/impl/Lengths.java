@@ -1,6 +1,6 @@
 package prp_aufgabe4.impl;
 
-import de.infinityblade.uni.cargame.Globals;
+import prp_aufgabe4.Globals;;
 import prp_aufgabe4.Length;
 
 /**
