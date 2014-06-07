@@ -72,4 +72,19 @@ public final class Values
 	{
 		return SpeedImpl.valueOf(inDistance, inTime);
 	}
+
+	public static Name nameWithString(String inName)
+	{
+		return NameImpl.valueOf(inName);
+	}
+
+	public static UniqueID uniqueIdWithLong(long inID)
+	{
+		return UniqueIDImpl.valueOf(inID);
+	}
+
+	public static BoundingBox boundingBoxWithDimensions(Length inWidth, Length inHeight, Length inDepth)
+	{
+		return BoundingBoxImpl.valueOf(inWidth, inHeight, inDepth);
+	}
 }
