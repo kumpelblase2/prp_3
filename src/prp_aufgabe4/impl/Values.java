@@ -87,4 +87,9 @@ public final class Values
 	{
 		return BoundingBoxImpl.valueOf(inWidth, inHeight, inDepth);
 	}
+
+	public static Angle angleWithDegree(double inAngle)
+	{
+		return AngleImpl.valueOf(inAngle);
+	}
 }
