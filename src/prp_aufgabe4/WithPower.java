@@ -1,7 +1,6 @@
 package prp_aufgabe4;
 
-//TODO extends mutable
-public interface WithPower
+public interface WithPower extends Mutable
 {
 	public Power power();
 	public Power maxPower();
