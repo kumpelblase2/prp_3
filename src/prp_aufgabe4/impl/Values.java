@@ -83,15 +83,20 @@ public final class Values
 		return UniqueIDImpl.valueOf(inID);
 	}
         
-        public static StowageLocation stowageLocation(int bay, int row, int tier) 
-        {
-            return StowageLocationImpl.valueOf(bay, row ,tier);
-        }
-        
-        public static StowageLocation nullLocation() 
-        {
-                return new NullLocation();
-        }
+    public static StowageLocation stowageLocation(int bay, int row, int tier)
+    {
+        return StowageLocationImpl.valueOf(bay, row ,tier);
+    }
+
+    public static StowageLocation nullLocation()
+    {
+            return new NullLocation();
+    }
+
+	public static Container nullContainer()
+	{
+		return new NullContainer();
+	}
 
 	public static BoundingBox boundingBoxWithDimensions(Length inWidth, Length inHeight, Length inDepth)
 	{
@@ -106,5 +111,55 @@ public final class Values
 	public static Angle angleWithDegree(double inAngle)
 	{
 		return AngleImpl.valueOf(inAngle);
+	}
+
+	public static Ship shipWithData(UniqueID inID, ShipHull inHull, ShipEngine inEngine, Length inPos)
+	{
+		return ShipImpl.valueOf(inID, inHull, inEngine, inPos);
+	}
+
+	public static ContainerShip containerShipWithData(UniqueID inID, ShipHull inHull, ShipEngine inEngine, Length inPos, Bounded3DimStack<Container> inContent, Mass inMaxMass)
+	{
+		return ContainerShipImpl.valueOf(inID, inHull, inEngine, inPos, inContent, inMaxMass);
+	}
+
+	public static VanCarrier vanCarrierWithData(UniqueID inId, Bounded3DimStack<Container> inContents, BoundingBox inBox, Mass inMass, Mass inEmptyMass, Mass inMaxMass, Length inPos, Power inPower, Power inMaxPower)
+	{
+		return VanCarrierImpl.valueOf(inId, inContents, inBox, inMass, inEmptyMass, inMaxMass, inPos, inPower, inMaxPower);
+	}
+
+	public static ContainerTruck containerTruckWithData(UniqueID inId, Bounded3DimStack<Container> inContents, BoundingBox inBox, Mass inMass, Mass inEmptyMass, Mass inMaxMass, Length inPos, Power inPower, Power inMaxPower)
+	{
+		return ContainerTruckImpl.valueOf(inId, inContents, inBox, inMass, inEmptyMass, inMaxMass, inPos, inPower, inMaxPower);
+	}
+
+	public static ContainerStowage containerStowage(int bays, int rows, int tiers)
+	{
+		return ContainerStowageImpl.valueOf(bays, rows, tiers, massInKG(0));
+	}
+
+	public static ShipHull shipHullWithData(UniqueID inId, BoundingBox inBox, Mass inMass)
+	{
+		return ShipHullImpl.valueOf(inId, inBox, inMass);
+	}
+
+	public static ShipHull shipHull(BoundingBox inBox, Mass inMass)
+	{
+		return shipHullWithData(UniqueIDImpl.newID(), inBox, inMass);
+	}
+
+	public static ShipEngine shipEngine(BoundingBox inBox, Power inMaxPower)
+	{
+		return shipEngineWithData(UniqueIDImpl.newID(), inBox, powerInWatt(0), inMaxPower, massInKG(0));
+	}
+
+	public static ShipEngine shipEngineWithData(UniqueID inId, BoundingBox inBox, Power inPower, Power inMaxPower, Mass inMass)
+	{
+		return ShipEngineImpl.valueOf(inId, inBox, inPower, inMaxPower, inMass);
+	}
+
+	public static TerminalStowage terminalStowageWithData(UniqueID inId, BoundingBox inBox, Bounded3DimStack<Container> inStorage, Mass inEmptyMass, Mass inMaxMass, Mass inMass)
+	{
+		return TerminalStowageImpl.valueOf(inId, inBox, inStorage, inEmptyMass, inMaxMass, inMass);
 	}
 }
