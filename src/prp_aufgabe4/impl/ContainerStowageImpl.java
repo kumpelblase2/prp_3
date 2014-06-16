@@ -1,17 +1,8 @@
 
 package prp_aufgabe4.impl;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-import prp_aufgabe4.BoundingBox;
-import prp_aufgabe4.Container;
-import prp_aufgabe4.ContainerStowage;
-import prp_aufgabe4.Length;
-import prp_aufgabe4.Mass;
-import prp_aufgabe4.Pallet;
-import prp_aufgabe4.Stowage;
-import prp_aufgabe4.StowageLocation;
+import java.util.*;
+import prp_aufgabe4.*;
 
 
 public class ContainerStowageImpl implements ContainerStowage {
@@ -31,7 +22,7 @@ public class ContainerStowageImpl implements ContainerStowage {
         this.maxMass = maxMass;
     }
     
-    public static Stowage valueOf(int bay, int row, int tier, Mass maxMass) {
+    static ContainerStowage valueOf(int bay, int row, int tier, Mass maxMass) {
         return new ContainerStowageImpl(bay, row, tier, maxMass);
     }
     

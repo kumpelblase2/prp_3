@@ -133,9 +133,24 @@ public final class Values
 		return ContainerTruckImpl.valueOf(inId, inContents, inBox, inMass, inEmptyMass, inMaxMass, inPos, inPower, inMaxPower);
 	}
 
+	public static ContainerStowage containerStowage(int bays, int rows, int tiers)
+	{
+		return ContainerStowageImpl.valueOf(bays, rows, tiers, massInKG(0));
+	}
+
 	public static ShipHull shipHullWithData(UniqueID inId, BoundingBox inBox, Mass inMass)
 	{
 		return ShipHullImpl.valueOf(inId, inBox, inMass);
+	}
+
+	public static ShipHull shipHull(BoundingBox inBox, Mass inMass)
+	{
+		return shipHullWithData(UniqueIDImpl.newID(), inBox, inMass);
+	}
+
+	public static ShipEngine shipEngine(BoundingBox inBox, Power inMaxPower)
+	{
+		return shipEngineWithData(UniqueIDImpl.newID(), inBox, powerInWatt(0), inMaxPower, massInKG(0));
 	}
 
 	public static ShipEngine shipEngineWithData(UniqueID inId, BoundingBox inBox, Power inPower, Power inMaxPower, Mass inMass)
