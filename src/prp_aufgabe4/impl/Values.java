@@ -82,11 +82,26 @@ public final class Values
 	{
 		return UniqueIDImpl.valueOf(inID);
 	}
+        
+        public static StowageLocation stowageLocation(int bay, int row, int tier) 
+        {
+            return StowageLocationImpl.valueOf(bay, row ,tier);
+        }
+        
+        public static StowageLocation nullLocation() 
+        {
+                return new NullLocation();
+        }
 
 	public static BoundingBox boundingBoxWithDimensions(Length inWidth, Length inHeight, Length inDepth)
 	{
 		return BoundingBoxImpl.valueOf(inWidth, inHeight, inDepth);
 	}
+
+    public static Bounded3DimStack boundedStack(int bay, int row, int tier, Object nullElement)
+    {
+        return Bounded3DimStackImpl.valueOf(bay, row, tier, nullElement);
+    }
 
 	public static Angle angleWithDegree(double inAngle)
 	{

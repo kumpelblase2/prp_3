@@ -1,6 +1,6 @@
 package prp_aufgabe4;
 
-public interface WithSpeed
-{
-	public Speed speed();
+public interface WithSpeed {
+    
+    Speed speed();
 }
