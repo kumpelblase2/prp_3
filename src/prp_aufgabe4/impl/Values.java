@@ -142,4 +142,9 @@ public final class Values
 	{
 		return ShipEngineImpl.valueOf(inId, inBox, inPower, inMaxPower, inMass);
 	}
+
+	public static TerminalStowage terminalStowageWithData(UniqueID inId, BoundingBox inBox, Bounded3DimStack<Container> inStorage, Mass inEmptyMass, Mass inMaxMass, Mass inMass)
+	{
+		return TerminalStowageImpl.valueOf(inId, inBox, inStorage, inEmptyMass, inMaxMass, inMass);
+	}
 }
