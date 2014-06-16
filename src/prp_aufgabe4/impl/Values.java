@@ -97,11 +97,14 @@ public final class Values
 	{
 		return BoundingBoxImpl.valueOf(inWidth, inHeight, inDepth);
 	}
-        
-        public static Bounded3DimStack boundedStack(int bay, int row, int tier, Object nullElement)
-        {
-            return Bounded3DimStackImpl.valueOf(bay, row, tier, nullElement);
-        }
-        
 
+    public static Bounded3DimStack boundedStack(int bay, int row, int tier, Object nullElement)
+    {
+        return Bounded3DimStackImpl.valueOf(bay, row, tier, nullElement);
+    }
+
+	public static Angle angleWithDegree(double inAngle)
+	{
+		return AngleImpl.valueOf(inAngle);
+	}
 }
