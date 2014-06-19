@@ -1,20 +1,19 @@
-
 package prp_aufgabe4.impl;
 
-public class NullPallet extends AbstractPallet{
+public class NullPallet extends AbstractPallet {
 
     @Override
     public boolean isFree() {
-        return true;
+	return true;
     }
 
     @Override
     public boolean isBlocked() {
-        return false;
+	return false;
     }
 
     @Override
     public boolean isOccupied() {
-        return false;
+	return false;
     }
 }

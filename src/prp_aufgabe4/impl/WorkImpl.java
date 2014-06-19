@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package prp_aufgabe4.impl;
 
 import prp_aufgabe4.Power;
@@ -17,12 +16,11 @@ import prp_aufgabe4.Work;
 public class WorkImpl implements Work {
 
     private final double m_value;
-    
-    protected WorkImpl(double inValue)
-    {
+
+    protected WorkImpl(double inValue) {
 	this.m_value = inValue;
     }
-    
+
     @Override
     public double toJ() {
 	return this.m_value;
@@ -52,9 +50,8 @@ public class WorkImpl implements Work {
     public Work div(double inToDivide) {
 	return Values.workInJoule(this.toJ() * inToDivide);
     }
-    
-    static WorkImpl valueOf(double inValue)
-    {
+
+    static WorkImpl valueOf(double inValue) {
 	return new WorkImpl(inValue);
     }
 }

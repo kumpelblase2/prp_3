@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package prp_aufgabe4.impl;
 
 import prp_aufgabe4.Acceleration;
@@ -19,12 +18,11 @@ import prp_aufgabe4.Work;
 public class ForceImpl implements Force {
 
     private final double m_value;
-    
-    protected ForceImpl(double inValue)
-    {
+
+    protected ForceImpl(double inValue) {
 	this.m_value = inValue;
     }
-    
+
     @Override
     public double toN() {
 	return this.m_value;
@@ -59,9 +57,8 @@ public class ForceImpl implements Force {
     public Force div(double inToDivide) {
 	return Values.forceInN(this.toN() / inToDivide);
     }
-    
-    static ForceImpl valueOf(double inValue)
-    {
+
+    static ForceImpl valueOf(double inValue) {
 	return new ForceImpl(inValue);
     }
 }

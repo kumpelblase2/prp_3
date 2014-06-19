@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package prp_aufgabe4.impl;
 
 import prp_aufgabe4.Mass;
@@ -12,15 +11,14 @@ import prp_aufgabe4.Mass;
  *
  * @author abq264
  */
-public class MassImpl implements Mass
-{
+public class MassImpl implements Mass {
+
     private final double m_value;
-    
-    protected MassImpl(double inValue)
-    {
+
+    protected MassImpl(double inValue) {
 	this.m_value = inValue;
     }
-    
+
     @Override
     public Mass add(Mass inToAdd) {
 	return Values.massInKG(this.toKG() + inToAdd.toKG());
@@ -45,9 +43,8 @@ public class MassImpl implements Mass
     public double toKG() {
 	return this.m_value;
     }
-    
-    static MassImpl valueOf(double inValue)
-    {
+
+    static MassImpl valueOf(double inValue) {
 	return new MassImpl(inValue);
     }
 }

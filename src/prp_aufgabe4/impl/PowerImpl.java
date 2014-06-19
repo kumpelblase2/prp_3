@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package prp_aufgabe4.impl;
 
 import prp_aufgabe4.Force;
@@ -19,12 +18,11 @@ import prp_aufgabe4.Work;
 public class PowerImpl implements Power {
 
     private final double m_value;
-    
-    protected PowerImpl(double inValue)
-    {
+
+    protected PowerImpl(double inValue) {
 	this.m_value = inValue;
     }
-    
+
     @Override
     public double toWatt() {
 	return this.m_value;
@@ -54,15 +52,13 @@ public class PowerImpl implements Power {
     public Power div(double inToDivide) {
 	return Values.powerInWatt(this.toWatt() / inToDivide);
     }
-    
+
     @Override
     public Force div(Speed inSpeed) {
 	return Values.forceInN(this.toWatt() / inSpeed.toMPerSeconds());
     }
-	
-    
-    static PowerImpl valueOf(double inValue)
-    {
+
+    static PowerImpl valueOf(double inValue) {
 	return new PowerImpl(inValue);
     }
 }

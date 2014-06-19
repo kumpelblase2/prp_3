@@ -2,45 +2,39 @@ package prp_aufgabe4.impl;
 
 import prp_aufgabe4.*;
 
-public class ShipHullImpl implements ShipHull
-{
-	private final UniqueID id;
-	private final BoundingBox box;
-	private final Mass mass;
+public class ShipHullImpl implements ShipHull {
 
-	public ShipHullImpl(UniqueID inId, BoundingBox inBox, Mass inMass)
-	{
-		id = inId;
-		box = inBox;
-		mass = inMass;
-	}
+    private final UniqueID id;
+    private final BoundingBox box;
+    private final Mass mass;
 
-	@Override
-	public int compareTo(ShipHull o)
-	{
-		return (int)(this.id().idNumber() - o.id().idNumber());
-	}
+    public ShipHullImpl(UniqueID inId, BoundingBox inBox, Mass inMass) {
+	id = inId;
+	box = inBox;
+	mass = inMass;
+    }
 
-	@Override
-	public BoundingBox boundingBox()
-	{
-		return box;
-	}
+    @Override
+    public int compareTo(ShipHull o) {
+	return (int) (this.id().idNumber() - o.id().idNumber());
+    }
 
-	@Override
-	public Mass mass()
-	{
-		return mass;
-	}
+    @Override
+    public BoundingBox boundingBox() {
+	return box;
+    }
 
-	@Override
-	public UniqueID id()
-	{
-		return id;
-	}
+    @Override
+    public Mass mass() {
+	return mass;
+    }
 
-	static ShipHullImpl valueOf(UniqueID inId, BoundingBox inBox, Mass inMass)
-	{
-		return new ShipHullImpl(inId, inBox, inMass);
-	}
+    @Override
+    public UniqueID id() {
+	return id;
+    }
+
+    static ShipHullImpl valueOf(UniqueID inId, BoundingBox inBox, Mass inMass) {
+	return new ShipHullImpl(inId, inBox, inMass);
+    }
 }

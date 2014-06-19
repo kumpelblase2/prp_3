@@ -1,6 +1,6 @@
 package prp_aufgabe4;
 
-public interface Angle extends PhysicalUnit<Angle>
-{
-	public double angle();
+public interface Angle extends PhysicalUnit<Angle> {
+
+    public double angle();
 }

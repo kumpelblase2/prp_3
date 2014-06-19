@@ -5,47 +5,40 @@ import prp_aufgabe4.TimeDiff;
 /**
  * Created by tim_hagemann on 12.05.2014.
  */
-class TimeDiffImpl implements TimeDiff
-{
-	private final double m_seconds;
+class TimeDiffImpl implements TimeDiff {
 
-	TimeDiffImpl(double inSeconds)
-	{
-		this.m_seconds = inSeconds;
-	}
+    private final double m_seconds;
 
-	@Override
-	public double toS()
-	{
-		return this.m_seconds;
-	}
+    TimeDiffImpl(double inSeconds) {
+	this.m_seconds = inSeconds;
+    }
 
-	@Override
-	public TimeDiff add(TimeDiff inToAdd)
-	{
-		return Values.timeInSeconds(this.toS() + inToAdd.toS());
-	}
+    @Override
+    public double toS() {
+	return this.m_seconds;
+    }
 
-	@Override
-	public TimeDiff sub(TimeDiff inToSub)
-	{
-		return Values.timeInSeconds(this.toS() - inToSub.toS());
-	}
+    @Override
+    public TimeDiff add(TimeDiff inToAdd) {
+	return Values.timeInSeconds(this.toS() + inToAdd.toS());
+    }
 
-	@Override
-	public TimeDiff mul(double inToMultiply)
-	{
-		return Values.timeInSeconds(this.toS() * inToMultiply);
-	}
+    @Override
+    public TimeDiff sub(TimeDiff inToSub) {
+	return Values.timeInSeconds(this.toS() - inToSub.toS());
+    }
 
-	@Override
-	public TimeDiff div(double inToDivide)
-	{
-		return Values.timeInSeconds(this.toS() / inToDivide);
-	}
+    @Override
+    public TimeDiff mul(double inToMultiply) {
+	return Values.timeInSeconds(this.toS() * inToMultiply);
+    }
 
-	static TimeDiffImpl valueOf(double inSeconds)
-	{
-		return new TimeDiffImpl(inSeconds);
-	}
+    @Override
+    public TimeDiff div(double inToDivide) {
+	return Values.timeInSeconds(this.toS() / inToDivide);
+    }
+
+    static TimeDiffImpl valueOf(double inSeconds) {
+	return new TimeDiffImpl(inSeconds);
+    }
 }

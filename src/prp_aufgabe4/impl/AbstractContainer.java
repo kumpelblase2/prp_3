@@ -1,4 +1,3 @@
-
 package prp_aufgabe4.impl;
 
 import java.util.Collection;
@@ -11,8 +10,8 @@ import prp_aufgabe4.Stowage;
 import prp_aufgabe4.StowageLocation;
 import prp_aufgabe4.UniqueID;
 
-public abstract class AbstractContainer implements Container{
-    
+public abstract class AbstractContainer implements Container {
+
     UniqueID id;
 
     Mass emptyMass = Values.massInKG(2280);
@@ -22,117 +21,120 @@ public abstract class AbstractContainer implements Container{
     int row = 2;
     int bay = 6;
     int tier = 3;
-    
+
     StowageLocation loc;
     Stowage palletStowage;
-    
+
     @Override
     public UniqueID id() {
-        return id;
+	return id;
     }
-    
+
     @Override
     public Mass emptyMass() {
-        return emptyMass;
+	return emptyMass;
     }
 
     @Override
     public Mass maxMass() {
-        return maxMass;
+	return maxMass;
     }
-    
+
     @Override
     public Mass mass() {
-        return palletStowage.mass();
+	return palletStowage.mass();
     }
-    
+
     @Override
     public BoundingBox boundingBox() {
-       return palletStowage.boundingBox();
+	return palletStowage.boundingBox();
     }
 
     @Override
     public boolean isEmpty() {
-        return palletStowage.isEmpty();
+	return palletStowage.isEmpty();
     }
 
     @Override
     public boolean isFull() {
-        return palletStowage.isFull();
+	return palletStowage.isFull();
     }
 
     @Override
     public void load(int bayNo, int rowNo, Pallet elem) {
-        palletStowage.load(bayNo, rowNo, elem);
+	palletStowage.load(bayNo, rowNo, elem);
     }
 
     @Override
     public void load(Pallet elem) {
-        palletStowage.load(elem);
+	palletStowage.load(elem);
     }
 
     @Override
     public void loadAll(Collection<Pallet> colls) {
-        palletStowage.loadAll(colls);
+	palletStowage.loadAll(colls);
     }
 
     @Override
     public boolean tierIsEmpty(int bay, int row) {
-        return palletStowage.tierIsEmpty(bay, row);
+	return palletStowage.tierIsEmpty(bay, row);
     }
 
     @Override
     public boolean tierIsFull(int bay, int row) {
-        return palletStowage.tierIsFull(bay, row);
+	return palletStowage.tierIsFull(bay, row);
     }
 
     @Override
     public boolean contains(Object elem) {
-        return palletStowage.contains(elem);
+	return palletStowage.contains(elem);
     }
 
     @Override
     public boolean containsAll(Collection<Pallet> coll) {
-        return palletStowage.containsAll(coll);
+	return palletStowage.containsAll(coll);
     }
 
     @Override
     public Pallet get(StowageLocation loc) {
-        return (Pallet) palletStowage.get(loc);
+	return (Pallet) palletStowage.get(loc);
     }
 
     @Override
     public Set<Pallet> getAll() {
-        return palletStowage.getAll();
+	return palletStowage.getAll();
     }
 
     @Override
     public StowageLocation locationOf(Pallet elem) {
-        return palletStowage.locationOf(elem);
+	return palletStowage.locationOf(elem);
     }
 
     @Override
     public StowageLocation loc() {
-        return loc;
+	return loc;
     }
 
     @Override
     public void setLocNull() {
-        this.loc = Values.nullLocation();
+	this.loc = Values.nullLocation();
     }
 
     @Override
     public void setLoc(Stowage stowage, StowageLocation loc) {
-        this.loc = loc;
-        this.palletStowage = stowage;
-    }
-    
-    @Override
-    public int compareTo(Container c) {
-        if (this.id.idNumber() == c.id().idNumber()) return 0;
-        if (this.id.idNumber() > c.id().idNumber()) return 1;
-        return -1;
+	this.loc = loc;
+	this.palletStowage = stowage;
     }
 
+    @Override
+    public int compareTo(Container c) {
+	if (this.id.idNumber() == c.id().idNumber()) {
+	    return 0;
+	}
+	if (this.id.idNumber() > c.id().idNumber()) {
+	    return 1;
+	}
+	return -1;
+    }
 
 }
